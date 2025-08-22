@@ -5,69 +5,76 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Daniel Tuyisenge | Portfolio</title>
   <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    /* Quick inline nav styling (can move to style.css later) */
+    nav {
+      background: #ffffff;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid #eee;
+    }
+
+    nav a {
+      text-decoration: none;
+      font-weight: bold;
+      color: #333;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #0077cc;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
 </head>
 <body>
 
+  <!-- Navigation Bar -->
+  <nav>
+    <a href="#profile">Profile</a>
+    <a href="#skills">Skills</a>
+    <a href="#research">Research</a>
+  </nav>
+
   <!-- Profile Section -->
-  <header class="profile">
-    <img src="assets/img/profile.jpg" alt="Profile Picture" class="profile-pic">
+  <section id="profile" class="profile fade-in">
+    <img src="assets/images/profile.jpg" alt="Profile Picture" class="profile-pic">
     <h1>Daniel Tuyisenge</h1>
     <p>PhD Candidate | Statistics</p>
     <p>📍 Kentucky, USA</p>
     <p>📧 <a href="mailto:daniel.tuyisenge@uky.edu">daniel.tuyisenge@uky.edu</a></p>
-    <p><a href="CV" target="_blank" class="cv-link">Request My CV</a></p>
-  </header>
+    <a href="https://drive.google.com/drive/folders/1-SlvMaGRlXQ273J3p5PlMkosmQA2cfkN?usp=drive_link" 
+       target="_blank" class="btn">Request My CV</a>
+  </section>
 
   <!-- Skills Section -->
-  <section class="skills" class="skills fade-in">
+  <section id="skills" class="skills fade-in">
     <h2>Skills</h2>
-    <ul>
-      <li>R</li>
-      <li>Python</li>
-      <li>SAS</li>
-    </ul>
+    <div class="skill-list">
+      <span>R</span>
+      <span>Python</span>
+      <span>SAS</span>
+    </div>
   </section>
 
   <!-- Research Section -->
   <section id="research" class="research fade-in">
     <h2>Discover my Research Space!</h2>
     <p>
-      Currently I am working on tolerance intervals, randomized response, ratio edits, 
-      intra-class correlation and survey methodology.
+      Currently I am working on tolerance intervals, randomized response,
+      ratio edits, intra-class correlation and survey methodology.
     </p>
-
-    <div class="research-stats">
-      <div>
-        <h3>5+</h3>
-        <p>Years Research</p>
-      </div>
-      <div>
-        <h3>5</h3>
-        <p>Completed Projects</p>
-      </div>
-      <div>
-        <h3>5+</h3>
-        <p>Awards</p>
-      </div>
-    </div>
-
-    <div class="research-topics">
-      <h3>Research Topics</h3>
-      <ul>
-        <li><strong>Randomized Response:</strong> Innovative survey methods for sensitive topics.</li>
-        <li><strong>Tolerance Intervals:</strong> Robust inference under uncertainty.</li>
-        <li><strong>Ratio Edits:</strong> Applications in survey error detection.</li>
-        <li><strong>Intraclass Correlation:</strong> Dependence structures in survey data.</li>
-      </ul>
-    </div>
   </section>
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Daniel Tuyisenge | Built with ❤️ using GitHub Pages</p>
-  </footer>
-
-  <!-- Link to JavaScript -->
   <script src="assets/js/script.js"></script>
 </body>
 </html>
+
