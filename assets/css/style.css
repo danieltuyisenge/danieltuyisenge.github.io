@@ -217,3 +217,33 @@ body.light-theme .card {
   background-color: #d4ac0d;
 }
 
+
+/* Profile About Me */
+.about-me {
+  margin: 15px 0;
+  font-size: 14px;
+  color: #bbb;
+  line-height: 1.4;
+}
+
+/* Research Cards */
+.research-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.research-card {
+  background: #1c1c1c;
+  padding: 20px;
+  border-radius: 12px;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.research-card:hover {
+  transform: scale(1.05);
+  background: #2c2c2c;
+}
+
+
