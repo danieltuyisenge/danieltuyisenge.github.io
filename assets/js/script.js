@@ -32,3 +32,23 @@ window.addEventListener("load", () => {
     }, 200);
   });
 });
+
+// 4) Dark/Light Theme Toggle
+const themeToggle = document.querySelector('.theme-toggle');
+const body = document.body;
+
+// Load saved theme (if any)
+if (localStorage.getItem("theme") === "light") {
+  body.classList.add("light-theme");
+}
+
+if (themeToggle) {
+  themeToggle.addEventListener('click', () => {
+    body.classList.toggle("light-theme");
+    if (body.classList.contains("light-theme")) {
+      localStorage.setItem("theme", "light");
+    } else {
+      localStorage.setItem("theme", "dark");
+    }
+  });
+}
