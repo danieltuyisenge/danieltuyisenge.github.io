@@ -201,3 +201,19 @@ body.light-theme .card {
   }
 }
 
+.cv-button {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #FFD700;  /* gold */
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.cv-button:hover {
+  background-color: #FFA500; /* orange */
+  color: white;
+}
+
