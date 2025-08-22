@@ -1,3 +1,6 @@
+/* =========================
+   GLOBAL STYLES & RESET
+   ========================= */
 * {
   margin: 0;
   padding: 0;
@@ -7,15 +10,21 @@
 
 body {
   display: flex;
-  background: #1c1c1c;
-  color: #eee;
+  background: #1a1a1a;   /* Default dark theme */
+  color: #f1f1f1;
+  transition: background 0.3s, color 0.3s;
 }
 
+/* =========================
+   LAYOUT
+   ========================= */
 .container {
   display: flex;
   width: 100%;
+  min-height: 100vh;
 }
 
+/* Sidebar */
 .sidebar {
   width: 250px;
   background: #111;
@@ -46,6 +55,7 @@ body {
   background: #ffcc00;
 }
 
+/* Main Content */
 .content {
   flex: 1;
   padding: 40px;
@@ -71,6 +81,9 @@ body {
   font-weight: bold;
 }
 
+/* =========================
+   SECTIONS
+   ========================= */
 .stats {
   display: flex;
   margin: 40px 0;
@@ -87,16 +100,12 @@ body {
   padding: 20px;
   border-radius: 10px;
   flex: 1;
-}
-
-/* Default = Dark Theme */
-body {
-  background: #1a1a1a;
-  color: #f1f1f1;
   transition: background 0.3s, color 0.3s;
 }
 
-/* Light Theme */
+/* =========================
+   LIGHT THEME OVERRIDES
+   ========================= */
 body.light-theme {
   background: #ffffff;
   color: #222;
@@ -113,17 +122,39 @@ body.light-theme .card {
   border: 1px solid #ddd;
 }
 
-/* Theme Toggle Button */
+/* =========================
+   THEME TOGGLE BUTTON
+   ========================= */
 .theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 1.5rem;
-  margin-top: 15px;
+  font-size: 1.8rem;
+  z-index: 1000;
   transition: transform 0.3s;
 }
 
 .theme-toggle:hover {
   transform: rotate(20deg);
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+   ========================= */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+
+  .cards {
+    flex-direction: column;
+  }
 }
 
