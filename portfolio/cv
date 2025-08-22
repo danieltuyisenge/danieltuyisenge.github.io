@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV | Daniel Tuyisenge</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <a href="index.html">🏠 Home</a>
+    <a href="cv.html">📄 CV</a>
+    <a href="research.html">🔬 Research</a>
+    <a href="projects.html">📊 Projects</a>
+    <a href="conferences.html">📌 Conferences</a>
+    <a href="contact.html">📧 Contact</a>
+  </nav>
+
+  <div class="container">
+    <h1>Curriculum Vitae</h1>
+    <p>Download my latest CV:</p>
+    <p><a href="Daniel_Tuyisenge_CV.pdf" target="_blank" style="color:lightblue;">📄 View PDF</a></p>
+  </div>
+
+  <footer>
+    © 2025 Daniel Tuyisenge | Portfolio
+  </footer>
+</body>
+</html>
+
