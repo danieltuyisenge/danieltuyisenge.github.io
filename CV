@@ -1,0 +1,9 @@
+<section id="cv">
+  <h2>Curriculum Vitae</h2>
+  <p>If you’d like a copy of my CV, you can request access below:</p>
+  <a href="https://drive.google.com/drive/folders/1-SlvMaGRlXQ273J3p5PlMkosmQA2cfkN?usp=drive_link" 
+     target="_blank" 
+     class="cv-button">
+     📄 Request My CV
+  </a>
+</section>
