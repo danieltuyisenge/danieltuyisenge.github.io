@@ -234,16 +234,54 @@ body.light-theme .card {
   margin-top: 15px;
 }
 
-.research-card {
-  background: #1c1c1c;
+/* Profile Card */
+.profile-card {
+  background: #111; /* keep it dark but distinct */
   padding: 20px;
   border-radius: 12px;
-  transition: transform 0.3s, background 0.3s;
+  text-align: center;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
 }
 
-.research-card:hover {
-  transform: scale(1.05);
-  background: #2c2c2c;
+/* Research Section */
+.research-section {
+  background: #1a1a1a;
+  padding: 40px;
+  border-radius: 12px;
+  margin-left: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
 }
+
+/* Research Stats */
+.stats {
+  display: flex;
+  justify-content: space-around;
+  margin: 30px 0;
+}
+.stats div {
+  text-align: center;
+}
+.stats h2 {
+  font-size: 2rem;
+  color: #FFD700;
+}
+.stats p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+/* Headings */
+.research-section h1 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #FFD700;
+}
+.research-section h3 {
+  margin-top: 20px;
+  font-weight: bold;
+  color: #fff;
+}
+
 
 
