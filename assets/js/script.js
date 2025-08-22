@@ -33,22 +33,28 @@ window.addEventListener("load", () => {
   });
 });
 
-// 4) Dark/Light Theme Toggle
+// 4) Dark/Light Theme Toggle with Icon Swap
 const themeToggle = document.querySelector('.theme-toggle');
 const body = document.body;
 
 // Load saved theme (if any)
 if (localStorage.getItem("theme") === "light") {
   body.classList.add("light-theme");
+  themeToggle.textContent = "☀️"; // show sun in light mode
+} else {
+  themeToggle.textContent = "🌙"; // show moon in dark mode
 }
 
 if (themeToggle) {
   themeToggle.addEventListener('click', () => {
     body.classList.toggle("light-theme");
+
     if (body.classList.contains("light-theme")) {
       localStorage.setItem("theme", "light");
+      themeToggle.textContent = "☀️"; // Sun icon
     } else {
       localStorage.setItem("theme", "dark");
+      themeToggle.textContent = "🌙"; // Moon icon
     }
   });
 }
