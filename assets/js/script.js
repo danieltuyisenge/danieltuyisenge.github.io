@@ -1,89 +1,71 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Daniel Tuyisenge | Research Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+// ============================
+// Portfolio Website Script
+// ============================
 
-  <div class="container">
+// 1) Toggle Sidebar (for mobile view)
+const menuToggle = document.querySelector('.menu-toggle');
+const sidebar = document.querySelector('.sidebar');
 
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <!-- Mobile Menu Toggle -->
-      <button class="menu-toggle">☰</button>
+if (menuToggle) {
+  menuToggle.addEventListener('click', () => {
+    sidebar.classList.toggle('active');
+  });
+}
 
-      <img src="profile.jpg" alt="Profile Picture" class="profile-pic">
-      <h2>Daniel Tuyisenge</h2>
-      <p>PhD Candidate | Statistics</p>
-      <p>📍 Kentucky, USA</p>
-      <p>📧 daniel.tuyisenge@uky.edu</p>
+// Optional: Close sidebar when a link is clicked (mobile)
+document.querySelectorAll('.sidebar a').forEach(link => {
+  link.addEventListener('click', () => {
+    if (window.innerWidth <= 768) {
+      sidebar.classList.remove('active');
+    }
+  });
+});
 
-      <!-- Skills -->
-      <div class="skills">
-        <p>R</p>
-        <div class="bar"><span data-skill="90%"></span></div>
-        <p>Python</p>
-        <div class="bar"><span data-skill="65%"></span></div>
-        <p>SAS</p>
-        <div class="bar"><span data-skill="55%"></span></div>
-      </div>
+// 2) Smooth Scrolling for internal links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener("click", function(e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute("href")).scrollIntoView({
+      behavior: "smooth"
+    });
+  });
+});
 
-      <!-- Theme Toggle -->
-      <button class="theme-toggle">🌙</button>
-    </aside>
+// 3) Animate skill bars on load
+window.addEventListener("load", () => {
+  document.querySelectorAll(".bar span").forEach(bar => {
+    let width = bar.style.width; // initial value from HTML
+    bar.style.width = "0"; // reset to 0 for animation
+    setTimeout(() => {
+      bar.style.width = width;
+    }, 200);
+  });
+});
 
-    <!-- Main Content -->
-    <main class="content">
+// 4) Dark/Light Theme Toggle with Icon Swap
+const themeToggle = document.querySelector('.theme-toggle');
+const body = document.body;
 
-      <!-- Hero Section -->
-      <section class="hero" id="home">
-        <h1>Discover my Amazing Research Space!</h1>
-        <p>I build methods for tolerance intervals, randomized response, and survey methodology.</p>
-        <a href="#research" class="btn">Explore Now</a>
-      </section>
+// Load saved theme from localStorage
+if (localStorage.getItem("theme") === "light") {
+  body.classList.add("light-theme");
+  if (themeToggle) themeToggle.textContent = "☀️"; // sun for light
+} else {
+  if (themeToggle) themeToggle.textContent = "🌙"; // moon for dark
+}
 
-      <!-- Stats Section -->
-      <section class="stats">
-        <div>
-          <h2>5+</h2>
-          <p>Years Research</p>
-        </div>
-        <div>
-          <h2>143</h2>
-          <p>Completed Projects</p>
-        </div>
-        <div>
-          <h2>20+</h2>
-          <p>Awards</p>
-        </div>
-      </section>
+// Toggle theme when clicked
+if (themeToggle) {
+  themeToggle.addEventListener('click', () => {
+    body.classList.toggle("light-theme");
 
-      <!-- Research Interests -->
-      <section id="research">
-        <h2>My Research Interests</h2>
-        <div class="cards">
-          <div class="card">
-            <h3>Randomized Response</h3>
-            <p>Innovative survey methods for sensitive topics.</p>
-          </div>
-          <div class="card">
-            <h3>Multivariate TIs</h3>
-            <p>Robust tolerance regions in high dimensions.</p>
-          </div>
-          <div class="card">
-            <h3>Outlier Detection</h3>
-            <p>Identifying anomalies in large datasets.</p>
-          </div>
-        </div>
-      </section>
-
-    </main>
-  </div>
-
-  <script src="script.js"></script>
-</body>
-</html>
+    if (body.classList.contains("light-theme")) {
+      localStorage.setItem("theme", "light");
+      themeToggle.textContent = "☀️";
+    } else {
+      localStorage.setItem("theme", "dark");
+      themeToggle.textContent = "🌙";
+    }
+  });
+}
 
