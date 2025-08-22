@@ -1,7 +1,12 @@
-<p align="center">
-  <a href="index.md"><b>Home</b></a> |
-  <a href="cv.md"><b>CV</b></a> |
-  <a href="research.md"><b>Research</b></a> |
-  <a href="code/"><b>Code</b></a> |
-  <a href="contact.md"><b>Contact</b></a>
-</p>
+# 🌐 Daniel Tuyisenge – Personal Academic Website
+
+This repository hosts my personal academic portfolio built with **HTML, CSS, JavaScript, and GitHub Pages**.  
+It highlights my **research, CV, code projects, and contact information**.
+
+## 🔗 Live Site
+👉 [danieltuyisenge.github.io](https://danieltuyisenge.github.io)
+
+## 📸 Preview
+![Screenshot of Website](images/screenshot.png)
+
+## 📂 Project Structure
