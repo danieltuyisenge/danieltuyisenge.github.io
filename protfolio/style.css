@@ -1,0 +1,62 @@
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at center, #0f2027, #203a43, #2c5364);
+  color: white;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navigation */
+nav {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  background: #007bff;
+  padding: 10px 20px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  background: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Page content */
+.container {
+  flex: 1;
+  padding: 40px 20px;
+}
+
+h1 {
+  margin-bottom: 10px;
+  font-size: 2.5rem;
+}
+
+p {
+  color: #ddd;
+  font-size: 1.2rem;
+}
+
+footer {
+  margin: 20px 0;
+  font-size: 0.9em;
+  color: #aaa;
+}
+
+
