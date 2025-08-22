@@ -1,182 +1,160 @@
-/* =========================
-   GLOBAL STYLES
-   ========================= */
+/* ===== Global Styles ===== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
 }
 
 body {
-  background: #1a1a1a;   /* Dark theme */
-  color: #f1f1f1;
-  transition: background 0.3s, color 0.3s;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-/* =========================
-   LAYOUT
-   ========================= */
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f9f9fb;
+  color: #333;
+  line-height: 1.6;
   padding: 20px;
-  gap: 20px;
 }
 
-/* =========================
-   PROFILE CARD
-   ========================= */
-.profile-card {
-  flex: 1;
-  max-width: 300px;
-  background: #111;
-  padding: 20px;
-  border-radius: 12px;
+/* ===== Profile Section ===== */
+header.profile {
   text-align: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+  padding: 30px 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  max-width: 800px;
+  margin: 0 auto 40px auto;
 }
 
-.profile-pic {
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
+header.profile .profile-pic {
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
-  margin-bottom: 15px;
-  border: 3px solid #FFD700;
+  object-fit: cover;
+  border: 4px solid #0077cc;
+  margin-bottom: 20px;
 }
 
-.profile-card h2 {
-  font-size: 1.5rem;
-  margin-bottom: 5px;
-  color: #FFD700;
+header.profile h1 {
+  font-size: 2.2rem;
+  color: #222;
 }
 
-.subtitle {
-  font-size: 0.9rem;
-  color: #ccc;
-  margin-bottom: 10px;
+header.profile p {
+  margin: 8px 0;
+  font-size: 1rem;
 }
 
-.profile-card .bio {
-  margin: 15px 0;
-  font-size: 0.9rem;
-  color: #bbb;
-  line-height: 1.4;
-}
-
-/* CV Button */
-.btn {
-  display: inline-block;
-  margin: 15px 0;
-  padding: 10px 20px;
-  background-color: #FFD700;
-  color: #000;
-  font-weight: bold;
+header.profile a {
+  color: #0077cc;
   text-decoration: none;
+  font-weight: bold;
+}
+
+header.profile a:hover {
+  text-decoration: underline;
+}
+
+.cv-link {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 8px 16px;
+  background: #0077cc;
+  color: white !important;
   border-radius: 6px;
   transition: background 0.3s;
 }
 
-.btn:hover {
-  background-color: #d4ac0d;
+.cv-link:hover {
+  background: #005fa3;
 }
 
-/* Skills */
-.skills p {
-  margin: 10px 0 3px;
-  font-size: 0.9rem;
-}
-
-.bar {
-  background: #333;
-  border-radius: 5px;
-  overflow: hidden;
-  height: 8px;
-}
-
-.bar span {
-  display: block;
-  height: 100%;
-  background: #FFD700;
-}
-
-/* =========================
-   RESEARCH SECTION
-   ========================= */
-.research-section {
-  flex: 3;
-  background: #1a1a1a;
-  padding: 40px;
+/* ===== Skills Section ===== */
+.skills {
+  max-width: 800px;
+  margin: 0 auto 40px auto;
+  padding: 20px;
+  background: #fff;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
-.research-section h1 {
-  font-size: 2rem;
-  margin-bottom: 15px;
-  color: #FFD700;
-}
-
-.research-section p {
-  margin-bottom: 20px;
-  line-height: 1.5;
-  color: #ddd;
-}
-
-.research-section h3 {
-  margin-top: 20px;
-  font-weight: bold;
-  color: #fff;
-}
-
-/* Stats */
-.stats {
-  display: flex;
-  justify-content: space-around;
-  margin: 30px 0;
-}
-
-.stats div {
+.skills h2 {
   text-align: center;
+  margin-bottom: 15px;
+  color: #0077cc;
 }
 
-.stats h2 {
-  font-size: 2rem;
-  color: #FFD700;
+.skills ul {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  list-style: none;
+  font-size: 1.1rem;
+  font-weight: bold;
 }
 
-.stats p {
-  font-size: 1rem;
-  color: #ccc;
+/* ===== Research Section ===== */
+.research {
+  max-width: 900px;
+  margin: 0 auto 40px auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-/* =========================
-   RESPONSIVE DESIGN
-   ========================= */
-@media (max-width: 900px) {
-  .container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .profile-card {
-    max-width: 100%;
-  }
-
-  .research-section {
-    width: 100%;
-    margin-left: 0;
-  }
+.research h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #0077cc;
 }
 
+.research p {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+  color: #444;
+}
 
+/* Research Stats Cards */
+.research-stats {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
 
+.research-stats div {
+  background: #f0f6ff;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  width: 150px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
 
+.research-stats h3 {
+  font-size: 1.8rem;
+  color: #0077cc;
+  margin-bottom: 6px;
+}
+
+.research-topics h3 {
+  margin-bottom: 15px;
+  color: #0077cc;
+}
+
+.research-topics ul {
+  list-style: disc;
+  margin-left: 20px;
+  font-size: 1.05rem;
+  color: #333;
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  color: #666;
+}
