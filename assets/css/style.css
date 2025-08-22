@@ -1,5 +1,5 @@
 /* =========================
-   GLOBAL STYLES & RESET
+   GLOBAL STYLES
    ========================= */
 * {
   margin: 0;
@@ -9,10 +9,14 @@
 }
 
 body {
-  display: flex;
-  background: #1a1a1a;   /* Default dark theme */
+  background: #1a1a1a;   /* Dark theme */
   color: #f1f1f1;
   transition: background 0.3s, color 0.3s;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 /* =========================
@@ -20,26 +24,75 @@ body {
    ========================= */
 .container {
   display: flex;
+  flex-wrap: wrap;
   width: 100%;
   min-height: 100vh;
+  padding: 20px;
+  gap: 20px;
 }
 
-/* Sidebar */
-.sidebar {
-  width: 250px;
+/* =========================
+   PROFILE CARD
+   ========================= */
+.profile-card {
+  flex: 1;
+  max-width: 300px;
   background: #111;
   padding: 20px;
+  border-radius: 12px;
   text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
 }
 
 .profile-pic {
   width: 120px;
+  height: 120px;
+  object-fit: cover;
   border-radius: 50%;
+  margin-bottom: 15px;
+  border: 3px solid #FFD700;
+}
+
+.profile-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+  color: #FFD700;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  color: #ccc;
   margin-bottom: 10px;
 }
 
+.profile-card .bio {
+  margin: 15px 0;
+  font-size: 0.9rem;
+  color: #bbb;
+  line-height: 1.4;
+}
+
+/* CV Button */
+.btn {
+  display: inline-block;
+  margin: 15px 0;
+  padding: 10px 20px;
+  background-color: #FFD700;
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background-color: #d4ac0d;
+}
+
+/* Skills */
 .skills p {
   margin: 10px 0 3px;
+  font-size: 0.9rem;
 }
 
 .bar {
@@ -52,236 +105,78 @@ body {
 .bar span {
   display: block;
   height: 100%;
-  background: #ffcc00;
-}
-
-/* Main Content */
-.content {
-  flex: 1;
-  padding: 40px;
-}
-
-.hero h1 {
-  font-size: 2rem;
-  color: #fff;
-}
-
-.hero p {
-  margin: 10px 0 20px;
-  font-size: 1.1rem;
-}
-
-.btn {
-  display: inline-block;
-  background: #ffcc00;
-  color: #000;
-  padding: 10px 20px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
+  background: #FFD700;
 }
 
 /* =========================
-   SECTIONS
+   RESEARCH SECTION
    ========================= */
-.stats {
-  display: flex;
-  margin: 40px 0;
-  justify-content: space-around;
-}
-
-.cards {
-  display: flex;
-  gap: 20px;
-}
-
-.card {
-  background: #222;
-  padding: 20px;
-  border-radius: 10px;
-  flex: 1;
-  transition: background 0.3s, color 0.3s;
-}
-
-/* =========================
-   LIGHT THEME OVERRIDES
-   ========================= */
-body.light-theme {
-  background: #ffffff;
-  color: #222;
-}
-
-body.light-theme .sidebar {
-  background: #f4f4f4;
-  color: #222;
-}
-
-body.light-theme .card {
-  background: #ffffff;
-  color: #333;
-  border: 1px solid #ddd;
-}
-
-/* =========================
-   THEME TOGGLE BUTTON
-   ========================= */
-.theme-toggle {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 1.8rem;
-  z-index: 1000;
-  transition: transform 0.3s;
-}
-
-.theme-toggle:hover {
-  transform: rotate(20deg);
-}
-
-/* =========================
-   RESPONSIVE DESIGN
-   ========================= */
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-  }
-
-  .sidebar {
-    width: 100%;
-  }
-
-  .cards {
-    flex-direction: column;
-  }
-}
-
-/* --------------------------
-   Responsive Sidebar (Mobile)
---------------------------- */
-.menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 2rem;
-  color: #ffcc00;
-  cursor: pointer;
-  margin-bottom: 20px;
-}
-
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-  }
-
-  .sidebar {
-    position: fixed;
-    left: -250px; /* hidden by default */
-    top: 0;
-    height: 100%;
-    width: 250px;
-    background: #111;
-    transition: left 0.3s ease;
-    z-index: 1000;
-  }
-
-  .sidebar.active {
-    left: 0; /* slide in when active */
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
-  .content {
-    margin-left: 0;
-    padding: 20px;
-  }
-}
-
-.cv-button {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 10px 20px;
-  background-color: #f1c40f;
-  color: #000;
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background 0.3s;
-}
-
-.cv-button:hover {
-  background-color: #d4ac0d;
-}
-
-
-/* Profile About Me */
-.about-me {
-  margin: 15px 0;
-  font-size: 14px;
-  color: #bbb;
-  line-height: 1.4;
-}
-
-/* Research Cards */
-.research-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 15px;
-  margin-top: 15px;
-}
-
-/* Profile Card */
-.profile-card {
-  background: #111; /* keep it dark but distinct */
-  padding: 20px;
-  border-radius: 12px;
-  text-align: center;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
-}
-
-/* Research Section */
 .research-section {
+  flex: 3;
   background: #1a1a1a;
   padding: 40px;
   border-radius: 12px;
-  margin-left: 20px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.5);
 }
 
-/* Research Stats */
-.stats {
-  display: flex;
-  justify-content: space-around;
-  margin: 30px 0;
-}
-.stats div {
-  text-align: center;
-}
-.stats h2 {
-  font-size: 2rem;
-  color: #FFD700;
-}
-.stats p {
-  font-size: 1rem;
-  color: #ccc;
-}
-
-/* Headings */
 .research-section h1 {
   font-size: 2rem;
   margin-bottom: 15px;
   color: #FFD700;
 }
+
+.research-section p {
+  margin-bottom: 20px;
+  line-height: 1.5;
+  color: #ddd;
+}
+
 .research-section h3 {
   margin-top: 20px;
   font-weight: bold;
   color: #fff;
 }
+
+/* Stats */
+.stats {
+  display: flex;
+  justify-content: space-around;
+  margin: 30px 0;
+}
+
+.stats div {
+  text-align: center;
+}
+
+.stats h2 {
+  font-size: 2rem;
+  color: #FFD700;
+}
+
+.stats p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+   ========================= */
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-card {
+    max-width: 100%;
+  }
+
+  .research-section {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
 
 
 
