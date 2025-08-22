@@ -1,35 +1,44 @@
-/* General styling */
+/* ================================
+   General Styling
+================================ */
 body {
   margin: 0;
-  height: 100vh;
+  min-height: 100vh;
   font-family: 'Segoe UI', sans-serif;
   background: radial-gradient(circle at center, #0f2027, #203a43, #2c5364);
-  color: white;
+  color: #fff;
   overflow-x: hidden;
   overflow-y: auto; /* allow scrolling for long pages */
+  text-align: center;
 }
 
-/* Background canvas */
+/* ================================
+   Background Canvas
+================================ */
 canvas {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: -1; /* keep behind content */
   width: 100%;
   height: 100%;
+  z-index: -1; /* stay behind content */
+  pointer-events: none; /* prevent blocking clicks */
 }
 
-/* Page container */
+/* ================================
+   Page Container
+================================ */
 .container {
   position: relative;
   z-index: 1; /* keep content above canvas */
   max-width: 800px;
   margin: 0 auto;
   padding: 40px 20px;
-  text-align: center;
 }
 
-/* Profile picture */
+/* ================================
+   Profile Picture
+================================ */
 .profile-pic {
   width: 120px;
   height: 120px;
@@ -37,21 +46,56 @@ canvas {
   border: 3px solid #fff;
   margin-bottom: 15px;
   object-fit: cover;
-  box-shadow: 0 0 20px rgba(255,255,255,0.4);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
 }
 
-/* Headings */
+/* ================================
+   Typography
+================================ */
 h1, h2, h3 {
   margin: 10px 0;
+  font-weight: 600;
 }
 
-/* Paragraphs */
 p {
   color: #ddd;
   line-height: 1.6;
+  margin: 10px 0;
 }
 
-/* Menu navigation */
+/* ================================
+   Buttons & Links
+================================ */
+a {
+  color: #00c3ff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #1e90ff;
+}
+
+/* styled button (e.g. for CV download) */
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background: #007bff;
+  color: white;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s ease-in-out;
+}
+
+.btn:hover {
+  background: #0056b3;
+  transform: scale(1.05);
+}
+
+/* ================================
+   Menu Navigation
+================================ */
 .menu {
   display: flex;
   justify-content: center;
@@ -67,7 +111,7 @@ p {
   border-radius: 8px;
   font-weight: bold;
   text-decoration: none;
-  transition: 0.3s;
+  transition: 0.3s ease-in-out;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -78,7 +122,9 @@ p {
   transform: scale(1.05);
 }
 
-/* Footer */
+/* ================================
+   Footer
+================================ */
 footer {
   margin-top: 30px;
   font-size: 0.9em;
