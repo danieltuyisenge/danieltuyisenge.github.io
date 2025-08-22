@@ -4,81 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Daniel Tuyisenge | Portfolio</title>
-  <style>
-    /* Background animation */
-    body {
-      margin: 0;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: 'Segoe UI', sans-serif;
-      background: radial-gradient(circle at center, #0f2027, #203a43, #2c5364);
-      overflow: hidden;
-      color: white;
-    }
-    canvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: -1;
-    }
-    .container {
-      text-align: center;
-    }
-    .profile-pic {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      border: 3px solid #fff;
-      margin-bottom: 15px;
-      object-fit: cover;
-      box-shadow: 0 0 20px rgba(255,255,255,0.4);
-    }
-    h1 {
-      font-size: 2.5em;
-      margin: 0;
-    }
-    p {
-      font-size: 1.2em;
-      margin: 5px 0 20px;
-      color: #ddd;
-    }
-    .menu {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 15px;
-      margin-top: 20px;
-    }
-    .menu a {
-      padding: 12px 25px;
-      background: #007bff;
-      color: white;
-      border-radius: 8px;
-      font-weight: bold;
-      text-decoration: none;
-      transition: 0.3s;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .menu a:hover {
-      background: #0056b3;
-      transform: scale(1.05);
-    }
-    footer {
-      margin-top: 40px;
-      font-size: 0.9em;
-      color: #aaa;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <canvas id="bg"></canvas>
-
   <div class="container">
-    <!-- Replace profile.jpg with your actual image file -->
     <img src="profile.jpg" alt="Profile Picture" class="profile-pic">
     <h1>Daniel Tuyisenge</h1>
     <p>PhD Candidate | Statistics | University of Kentucky</p>
@@ -95,51 +25,7 @@
       © 2025 Daniel Tuyisenge | Portfolio
     </footer>
   </div>
-
-  <!-- ✅ Move star backgrounds & script here -->
-  <div id="stars"></div>
-  <div id="stars2"></div>
-  <div id="stars3"></div>
   <script src="script.js"></script>
-
-  <script>
-    // Background particle animation
-    const canvas = document.getElementById("bg");
-    const ctx = canvas.getContext("2d");
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    const stars = [];
-    for (let i = 0; i < 150; i++) {
-      stars.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        radius: Math.random() * 2,
-        dx: (Math.random() - 0.5) * 0.5,
-        dy: (Math.random() - 0.5) * 0.5
-      });
-    }
-
-    function animate() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = "white";
-      stars.forEach(star => {
-        ctx.beginPath();
-        ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
-        ctx.fill();
-        star.x += star.dx;
-        star.y += star.dy;
-        if (star.x < 0 || star.x > canvas.width) star.dx *= -1;
-        if (star.y < 0 || star.y > canvas.height) star.dy *= -1;
-      });
-      requestAnimationFrame(animate);
-    }
-    animate();
-
-    window.addEventListener("resize", () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    });
-  </script>
 </body>
 </html>
+
