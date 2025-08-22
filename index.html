@@ -3,78 +3,98 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Daniel Tuyisenge | Portfolio</title>
+  <title>Daniel Tuyisenge | Home</title>
   <link rel="stylesheet" href="assets/css/style.css">
   <style>
-    /* Quick inline nav styling (can move to style.css later) */
-    nav {
-      background: #ffffff;
-      padding: 15px 20px;
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      text-align: center;
       display: flex;
+      flex-direction: column;
       justify-content: center;
-      gap: 30px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      border-bottom: 1px solid #eee;
+      align-items: center;
+      height: 100vh;
     }
 
-    nav a {
+    .hero {
+      margin-bottom: 40px;
+    }
+
+    .hero img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 3px solid #fff;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin: 10px 0;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #ccc;
+    }
+
+    .menu {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      max-width: 700px;
+    }
+
+    .menu a {
+      display: block;
+      background: #0077cc;
+      padding: 15px 30px;
+      border-radius: 8px;
       text-decoration: none;
+      color: #fff;
       font-weight: bold;
-      color: #333;
-      transition: color 0.3s ease;
+      transition: background 0.3s ease, transform 0.2s ease;
     }
 
-    nav a:hover {
-      color: #0077cc;
+    .menu a:hover {
+      background: #005fa3;
+      transform: translateY(-3px);
     }
 
-    html {
-      scroll-behavior: smooth;
+    footer {
+      position: absolute;
+      bottom: 10px;
+      font-size: 0.9rem;
+      color: #aaa;
     }
   </style>
 </head>
 <body>
 
-  <!-- Navigation Bar -->
-  <nav>
-    <a href="#profile">Profile</a>
-    <a href="#skills">Skills</a>
-    <a href="#research">Research</a>
-  </nav>
-
-  <!-- Profile Section -->
-  <section id="profile" class="profile fade-in">
-    <img src="assets/images/profile.jpg" alt="Profile Picture" class="profile-pic">
+  <!-- Hero Section -->
+  <div class="hero">
+    <img src="assets/images/profile.jpg" alt="Profile Picture">
     <h1>Daniel Tuyisenge</h1>
-    <p>PhD Candidate | Statistics</p>
-    <p>📍 Kentucky, USA</p>
-    <p>📧 <a href="mailto:daniel.tuyisenge@uky.edu">daniel.tuyisenge@uky.edu</a></p>
-    <a href="https://drive.google.com/drive/folders/1-SlvMaGRlXQ273J3p5PlMkosmQA2cfkN?usp=drive_link" 
-       target="_blank" class="btn">Request My CV</a>
-  </section>
+    <p>PhD Candidate | Statistics | Kentucky, USA</p>
+  </div>
 
-  <!-- Skills Section -->
-  <section id="skills" class="skills fade-in">
-    <h2>Skills</h2>
-    <div class="skill-list">
-      <span>R</span>
-      <span>Python</span>
-      <span>SAS</span>
-    </div>
-  </section>
+  <!-- Main Menu -->
+  <div class="menu">
+    <a href="cv.html">📄 CV</a>
+    <a href="research.html">🔬 Research</a>
+    <a href="projects.html">📊 Projects</a>
+    <a href="conferences.html">🎤 Conferences</a>
+    <a href="contact.html">📬 Contact</a>
+  </div>
 
-  <!-- Research Section -->
-  <section id="research" class="research fade-in">
-    <h2>Discover my Research Space!</h2>
-    <p>
-      Currently I am working on tolerance intervals, randomized response,
-      ratio edits, intra-class correlation and survey methodology.
-    </p>
-  </section>
+  <!-- Footer -->
+  <footer>
+    © 2025 Daniel Tuyisenge | Portfolio
+  </footer>
 
-  <script src="assets/js/script.js"></script>
 </body>
 </html>
-
