@@ -1,3 +1,4 @@
 title: "Daniel Tuyisenge"
 description: "Ph.D. Candidate in Statistics"
-theme: minima   # simple built-in theme
+markdown: kramdown
+theme: null   # using your own layout
